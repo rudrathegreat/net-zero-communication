@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+html.lenis {
+    height: auto;
+  }
+
+.lenis.lenis-smooth {
+scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+overscroll-behavior: contain;
+}
+
+.scroll-container {
+    width:100vw;
+}
+
+.lenis.lenis-stopped {
+overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width:0;
+}
+
+/* body {
+    background-color: #121212;
+    color: white;
+    overflow-x: hidden;
+} */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    border-radius:20px;
+    backdrop-filter: blur(40px);
+    margin-left:1%;
+    margin-top:0.5%;
+    padding: 0 3vw;
+}
+
+.navbar .mobile-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar .mobile-menu-expand {
+    display: none;
+    /* transform:translateY(1vh); */
+    opacity: 0;
+    position: absolute;
+    top: 13vh;
+    transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 2vw;
+    list-style: none;
+}
+
+.navbar .menu a {
+    font-size: 1.2rem;
+    font-weight:300;
+    color: white;
+    position:relative;
+    text-decoration: none;
+    mix-blend-mode: exclusion;
+}
+
+.navbar .menu a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.hero {
+    width:100%;
+    height:100vh;
+    padding:3vh 1%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.5vw;
+}
+
+.hero .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width: 40%;
+    background:white;
+    height:100%;
+}
+
+.hero .left {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background:url('hero-bg.jpg') no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    border-radius:20px;
+    gap: 2vh;
+}
+
+.hero .left .title {
+    background:white;
+    padding:3vh 2vw;
+    padding-right:4vw;
+    border-top-right-radius: 20px;
+    width:70%;
+}
+
+.hero .left .title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: black;
+    line-height: 0.9;
+}
+
+.hero .left p {
+    font-size:1.2rem;
+    font-weight: 300;
+    padding:1vh 0;
+}
+
+.hero .scroll-down-container {
+    padding:1vh 2vw;
+    color:white;
+}
+
+.hero .left a {
+    transition: transform 0.3s ease-in-out;
+    width:10vh;
+    height:10vh;
+    display:inline-block;
+}
+
+.hero .left a img {
+    width:100%;
+    height:100%;
+    object-fit: contain;
+}
+
+.hero .left a:hover {
+    transform: translateY(1vh);
+    transition: transform 0.3s ease;
+}
+
+.hero .right .hero-row {
+    width:100%;
+    height:32vh;
+    background: #52BA9A;
+    border-radius: 20px;
+}
+
+.content {
+    padding:5vh 10vw;
+}
+
+.content > div {
+    padding-top:10vh;
+}
+
+.content h2 {
+    margin-top:2vh;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.content p {
+    margin-top:1vh;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.content h1 {
+    padding-bottom:1vh;
+    margin-bottom:2vh;
+    font-size: 3rem;
+    font-weight: 700;
+    width:100%;
+    position:relative;
+}
+
+.content h1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ccc;
+}
+
+.content ol {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-size: 1.2rem;
+    line-height:1.6;
+    padding-left:1vw;
+}
+
+@media screen and (max-width:1000px) {
+    .hero .right {
+        display:none;
+    }
+
+    .hero .left {
+        width:100%;
+    }
+
+    .hero .scroll-down-container {
+        display:none;
+    }
+
+    .hero .left .title {
+        width:100%;
+        border-radius:20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .navbar .mobile-menu {
+        display: inline-block;
+    }
+
+    .navbar .menu {
+        display: none;
+    }
+
+    .navbar .mobile-menu a {
+        font-size: 1.2rem;
+        color:white;
+        text-decoration: none;
+        mix-blend-mode: exclusion;
+        position:relative;
+        display: inline-block;
+    }
+
+    .navbar .mobile-menu a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        background-color: white;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar .mobile-menu a:hover::after {
+        transform: scaleX(1);
+        transition:transform 0.3s ease-in-out;
+    }
+
+    .navbar {
+        margin-top:1vh;
+        margin-left:3%;
+        width:94%;
+    }
+
+    .navbar .mobile-menu-expand.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 11vh;
+        right: 0;
+        background: rgba(255, 255, 255, 1);
+        backdrop-filter: blur(40px);
+        border-radius: 20px;
+        width: 100%;
+        height:86vh;
+        opacity: 1;
+        transition: top 0.3s ease, opacity 0.3s ease;
+    }
+
+    .navbar .mobile-menu-expand a {
+        font-size: 1.5rem;
+        color: white;
+        mix-blend-mode: exclusion;
+        padding: 2vh 3vw;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+    }
+
+    .navbar .mobile-menu-expand a:last-child {
+        border-bottom: none;
+    }
+
+    .navbar .mobile-menu-expand a:first-child {
+        padding-top:5vh;
+    }
+
+    .navbar .mobile-menu-expand a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero {
+        width:96%;
+        margin-left:2%;
+    }
+}
