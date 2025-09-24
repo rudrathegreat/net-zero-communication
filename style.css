@@ -237,6 +237,24 @@ overflow: hidden;
     padding-left:1vw;
 }
 
+.hero-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding:3vh 0vw;
+    color:white;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height:0.9;
+}
+
+.hero-row p {
+    padding:0vh 2vw;
+    padding-top:2vh;
+    border-top: 2px solid rgba(255,255,255,0.3);
+    width:100%;
+}
+
 @media screen and (max-width:1000px) {
     .hero .right {
         display:none;
